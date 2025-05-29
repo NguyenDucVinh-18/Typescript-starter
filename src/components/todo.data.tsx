@@ -10,14 +10,15 @@ const TodoData = (props: IProps) => {
   const { todos } = props;
   return (
     <div className="todo-data">
-      <h2>Todo Data</h2>
       <div>
-        {todos.map(item => {
-            return (
-                <div key={item.id}>
-                    <h3>{item.title}</h3>
-                </div>
-            )
+        {todos.map((item) => {
+          return (
+            <div key={item.id}>
+              {item.id} - {item.title}
+              &nbsp;&nbsp;&nbsp;&nbsp;<button>Delete</button>
+            </div>
+
+          );
         })}
       </div>
     </div>
