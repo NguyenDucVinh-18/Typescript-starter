@@ -32,6 +32,10 @@ const TodoList = () => {
     setListTodos((prevTodos) => [...prevTodos, todo]);
   };
 
+  const deleteTodo = (id: number) => {
+    setListTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <>
       <div
@@ -45,7 +49,9 @@ const TodoList = () => {
         <h3> TO DO LIST</h3>
         <hr />
         <TodoInput addTodo={addTodo} />
-        <TodoData todos={listTodos} />
+        <TodoData todos={listTodos} 
+        deleteTodo={deleteTodo}
+        />
       </div>
     </>
   );
